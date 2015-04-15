@@ -48,7 +48,7 @@ UXTesting Android Example Pject
 	<service android:enabled="true" android:name="io.uxtesting.uxtestingsdk.UXTService" />
 	```
 
-* If you have to support version below API 14, add following code in every Activity
+6. (Optional)If you have to support version below API 14, add following code in every Activity
 	```java
 	@Override
 	public void onResume() {
@@ -63,13 +63,13 @@ UXTesting Android Example Pject
 	}
 	```
 
-6. Run your application.
+7. Run your application.
 
-7. Shake to start your recording.
+8. Shake to start your recording.
 
-8. Shake to end your recording. 
+9. Shake to end your recording. 
 
-9. Go to [UXTesting Website](http://www.uxtesting.io/apps/) to view the results with your account.
+10. Go to [UXTesting Website](http://www.uxtesting.io/apps/) to view the results with your account.
 
 <br>
 
