@@ -8,60 +8,60 @@ UXTesting Android Example Pject
 1. Put uxtestingsdk.aar in library folder
 
 2. Add following library in your `build.gradle` setting
-```java
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
+	```java
+	repositories {
+	    flatDir {
+	        dirs 'libs'
+	    }
+	}
 
-dependencies {
-    compile 'org.bytedeco:javacv:0.10'
-    compile (name:'uxtestingsdk', ext:'aar')
-}
-```
+	dependencies {
+	    compile 'org.bytedeco:javacv:0.10'
+	    compile (name:'uxtestingsdk', ext:'aar')
+	}
+	```
 
 3. Initial your app key in Custom Application
-```java
-import io.uxtesting.uxtestingsdk.UXTFramework;
+	```java
+	import io.uxtesting.uxtestingsdk.UXTFramework;
 
-public class CustomApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        UXTFramework.Init(this, "YOUR_APP_KEY", false);
-    }
-}
-```
+	public class CustomApplication extends Application {
+	    @Override
+	    public void onCreate() {
+	        super.onCreate();
+	        UXTFramework.Init(this, "YOUR_APP_KEY", false);
+	    }
+	}
+	```
 
 4. Add permissions to `AndroidManifest.xml`
-```xml
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-```
+	```xml
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	```
 
 5. Add `UXTService` to `AndroidManifest.xml`
-```xml
-    <service android:enabled="true" android:name="io.uxtesting.uxtestingsdk.UXTService" />
-```
+	```xml
+	<service android:enabled="true" android:name="io.uxtesting.uxtestingsdk.UXTService" />
+	```
 
 * If you have to support version below API 14, add following code in every Activity
-```java
-    @Override
-    public void onResume() {
-        super.onResume();
-        UXTFramework.onResume(this);
-    }
+	```java
+	@Override
+	public void onResume() {
+	    super.onResume();
+	    UXTFramework.onResume(this);
+	}
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        UXTFramework.onPause();
-    }
-```
+	@Override
+	public void onPause() {
+	    super.onPause();
+	    UXTFramework.onPause();
+	}
+	```
 
 6. Run your application.
 
