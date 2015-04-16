@@ -29,5 +29,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'org.bytedeco:javacv:0.10'
-    compile (name:'uxtestingsdk', ext:'aar')
+    compile (name:'uxtesting_sdk_1.0.1', ext:'aar')
 }

@@ -48,7 +48,7 @@ UXTesting Android Example Pject
 	<service android:enabled="true" android:name="io.uxtesting.uxtestingsdk.UXTService" />
 	```
 
-6. (Optional)If you have to support version below API 14, add following code in every Activity
+6. (Optional) If you have to support version below API 14, add following code in every Activity
 	```java
 	@Override
 	public void onResume() {
