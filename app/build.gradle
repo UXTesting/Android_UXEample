@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.0"
 
     defaultConfig {
         applicationId "io.uxtesting.android_uxeample"
-        minSdkVersion 8
-        targetSdkVersion 21
+        minSdkVersion 9
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -27,7 +27,7 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'org.bytedeco:javacv:0.10'
-    compile (name:'uxtesting_sdk_1.0.1', ext:'aar')
+    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'org.bytedeco:javacv:0.11'
+    compile (name:'uxtesting_sdk_1.0.4', ext:'aar')
 }
