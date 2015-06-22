@@ -16,36 +16,41 @@ UXTesting Android Example Pject
 	}
 
 	dependencies {
-	    compile 'org.bytedeco:javacv:0.10'
+	    compile 'org.bytedeco:javacv:0.11'
 	    compile (name:'uxtestingsdk', ext:'aar')
 	}
 	```
 
 3. Initial your app key in Custom Application
 	```java
-	import io.uxtesting.uxtestingsdk.UXTFramework;
+	import io.uxtesting.UXTesting;
 
 	public class CustomApplication extends Application {
 	    @Override
 	    public void onCreate() {
 	        super.onCreate();
-	        UXTFramework.Init(this, "YOUR_APP_KEY", false);
+	        UXTesting.Init(this, "YOUR_APP_KEY");
 	    }
 	}
 	```
 
 4. Add permissions to `AndroidManifest.xml`
 	```xml
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-feature android:name="android.hardware.camera"  android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
 	```
 
 5. Add `UXTService` to `AndroidManifest.xml`
 	```xml
-	<service android:enabled="true" android:name="io.uxtesting.uxtestingsdk.UXTService" />
+	<service android:enabled="true" android:name="io.uxtesting.UXTestingService" />
 	```
 
 6. (Optional) If you have to support version below API 14, add following code in every Activity
@@ -53,13 +58,13 @@ UXTesting Android Example Pject
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    UXTFramework.onResume(this);
+	    UXTesting.onResume(this);
 	}
 
 	@Override
 	public void onPause() {
 	    super.onPause();
-	    UXTFramework.onPause();
+	    UXTesting.onPause();
 	}
 	```
 
