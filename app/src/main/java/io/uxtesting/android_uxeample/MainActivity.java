@@ -6,7 +6,7 @@ import android.support.v7.widget.SearchView;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import io.uxtesting.uxtestingsdk.UXTFramework;
+import io.uxtesting.UXTesting;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -53,14 +53,14 @@ public class MainActivity extends ActionBarActivity {
     public void onResume() {
         super.onResume();
         // Add this line only when you have to support version below API 14
-        UXTFramework.onResume(this);
+        UXTesting.onResume(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
         // Add this line only when you have to support version below API 14
-        UXTFramework.onPause();
+        UXTesting.onPause();
     }
 
 }

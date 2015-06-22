@@ -2,7 +2,7 @@ package io.uxtesting.android_uxeample;
 
 import android.app.Application;
 
-import io.uxtesting.uxtestingsdk.UXTFramework;
+import io.uxtesting.UXTesting;
 
 public class CustomApplication extends Application {
 
@@ -10,7 +10,7 @@ public class CustomApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        UXTFramework.Init(this, "MY_APP_KEY", false);
+        UXTesting.Init(this, "MY_APP_KEY");
     }
 
 }
